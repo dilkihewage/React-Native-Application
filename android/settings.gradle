@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        google()                // ✅ Add Google Maven Repository
+        mavenCentral()          // ✅ Add Maven Central
+        gradlePluginPortal()    // ✅ Add Gradle Plugin Portal
+    }
+    includeBuild("../node_modules/@react-native/gradle-plugin")
+}
+
+plugins {
+    id("com.facebook.react.settings")
+}
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand()
+}
+
+rootProject.name = 'test'
+include ':app'
+includeBuild('../node_modules/@react-native/gradle-plugin')
